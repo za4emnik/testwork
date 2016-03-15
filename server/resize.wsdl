@@ -1,0 +1,39 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='ResizeService'
+	targetNamespace='http://localhost/testwork/server'
+	xmlns:tns='http://localhost/testwork/server'
+	xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+	xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+	xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+	xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+<message name='resizeImgRequest'>
+	<part name='img' type='xsd:string' />
+	<part name='type' type='xsd:string' />
+	<part name='width' type='xsd:integer' />
+	<part name='height' type='xsd:integer' />
+</message>
+
+<message name='resizeImgResponse'>
+	<part name='result' type='xsd:string' />
+</message>
+
+<portType name='ResizePortType'>
+	<operation name='resizeImg'>
+		<input message='tns:resizeImgRequest'/>
+		<output message='tns:resizeImgResponse'/>
+	</operation>
+</portType>
+
+<binding name='ResizeBinding' type='tns:ResizePortType'>
+	<soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+	<operation name='resizeImg' />
+</binding>
+
+<service name="ResizeService">
+	<port name='ResizePort' binding='ResizeBinding'>
+		<soap:address location='http://localhost/testwork/server/server.php'/>
+	</port>
+</service>
+</definitions>
