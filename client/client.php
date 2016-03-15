@@ -55,7 +55,7 @@
 		*/
 		private function resize($width, $height){
 			$i = file_get_contents($this->image['tmp_name']);
-			
+			print_r($this->client->__getFunctions());
 			try{
 				$i = $this->client->resizeImg(base64_encode($i), $this->image['type'], $width, $height); //resize image
 			}catch(SoapFault $e){
