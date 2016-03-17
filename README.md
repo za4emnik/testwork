@@ -19,8 +19,7 @@ You get the picture as a string. To save an image, you can use function <code>fi
 <code>$img = 1.png;</code><br>
 <code>$type = "image/png";</code><br>
   <code>$client = new SoapClient($wsdl);</code><br>
- <code>$i = file_get_contents($img);</code><br>
-  <code>$i = base64_encode($i);</code><br>
+ <code>$i = base64_encode(file_get_contents($img));</code><br>
   
   <code>$new_img = $client->resizeImg($i, $type, 100, 100);</code>
   <p><code>$new_img = base64_decode($new_img);</code></p>
