@@ -1,7 +1,7 @@
 This service is designed to change the image size.
-To get started you need to create a soap-connection with the service and specify the path to the WSDL file. WSDL file is located in http://localhost/testwork/server/resize.wsdl
+To get started you need to create a soap-connection with the service and specify the path to the WSDL file. WSDL file is located in server/resize.wsdl
 
-<code>$server = new new SoapClient('http://localhost/testwork/server/resize.wsdl');</code>
+<code>$server = new SoapClient('http://localhost/testwork/server/resize.wsdl');</code>
 
 Next, you need to call <b>resizeImg</b> method with a set of parameters:
 
