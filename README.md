@@ -23,7 +23,7 @@ You get the picture as a string. To save an image, you can use function <code>fi
   <code>$i = base64_encode($i);</code><br>
   
   <code>$new_img = $client->resizeImg($i, $type, 100, 100);</code>
-  <code>$new_img = base64_decode($new_img);</code>
+  <p><code>$new_img = base64_decode($new_img);</code></p>
   
   <code>$file_put_contents('2.png', $new_img);</code>
 
